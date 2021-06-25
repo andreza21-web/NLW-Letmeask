@@ -6,10 +6,11 @@ import googleIconImg from "../assets/images/google-icon.svg";
 
 import { database } from "../services/firebase";
 
-import { Button } from "../components/Button";
+import { Button } from "../components/Button/Button";
 import { useAuth } from "../hooks/useAuth";
 import { FormEvent, useState } from "react";
 import "../styles/auth.scss";
+
 
 export function Home() {
   const history = useHistory();
@@ -37,11 +38,11 @@ export function Home() {
       alert("Room does not exists.");
       return;
     }
-    
-     if (roomRef.val().endedAt) {
-       alert("Room already closed.");
-       return;
-     }
+
+    if (roomRef.val().endedAt) {
+      alert("Room already closed.");
+      return;
+    }
 
     history.push(`/rooms/${roomCode}`);
   }

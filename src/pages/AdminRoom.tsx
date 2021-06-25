@@ -5,12 +5,14 @@ import deleteImg from "../assets/images/delete.svg";
 import checkImg from "../assets/images/check.svg";
 import answerImg from "../assets/images/answer.svg";
 
-import { Button } from "../components/Button";
+import { Button } from "../components/Button/Button";
 import { Question } from "../components/Question";
-import { RoomCode } from "../components/RoomCode";
+import { RoomCode } from "../components/RoomCode/RoomCode";
 // import { useAuth } from '../hooks/useAuth';
 import { useRoom } from "../hooks/useRoom";
 import { database } from "../services/firebase";
+
+
 
 import "../styles/room.scss";
 
@@ -25,8 +27,8 @@ export function AdminRoom() {
   const roomId = params.id;
 
   const { title, questions } = useRoom(roomId);
-  
-//encerrar sala
+
+  //encerrar sala
   async function handleEndRoom() {
     await database.ref(`rooms/${roomId}`).update({
       endedAt: new Date(),
@@ -34,7 +36,7 @@ export function AdminRoom() {
 
     history.push("/");
   }
-//deletar pergunta
+  //deletar pergunta
   async function handleDeleteQuestion(questionId: string) {
     if (window.confirm("Tem certeza que você deseja excluir esta pergunta?")) {
       await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
@@ -45,15 +47,12 @@ export function AdminRoom() {
     await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
       isAnswered: true,
     });
-
   }
-async function handleHighlightQuestion(questionId: string) {
-  await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
-    isHighlighted: true,
-  });
-
-}
-
+  async function handleHighlightQuestion(questionId: string) {
+    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+      isHighlighted: true,
+    });
+  }
 
   return (
     <div id="page-room">
