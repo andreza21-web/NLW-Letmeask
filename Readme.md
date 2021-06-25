@@ -4,28 +4,26 @@
 
 
 
-<h1>Letmeask </h1>
+# Letmeask
 
+O Letmeask é plataforma de comunicação, entre perguntas e respostas podendo criar salas quando quiser e ate mesmo deleta-las, junte com seus amigos para conversar diversos assuntos!
 
-O LetmeAsk é plataforma de comunicação entre stremer e o chat, para responder perguntas.
+# **Tecnologias utilizadas**
 
-<h1> Tecnologias utilizadas</h1>
+- `React`
+- `Firebase`
+- `TypeScript`
 
+# **Instruções para visualizar o projeto**
+ 
+```jsx
+ instale as dependências necessárias com:
+npm i ou yarn install
 
-`React`
+iniciar o projet
+npm start ou yarn start`
+```
 
-`Firebase`
+🎨 Protótipo
 
-`TypeScript `
-
-<h1> Instruções para visualizar o projeto</h1>
-
-
-
-     instale as dependências necessárias com:
-    npm i ou yarn
-    
-    agora start o projeto
-    npm start ou yarn start`
-
-
+[Letmeask (Copy)](https://www.figma.com/file/FU7dRJpQk1bzgfVksBpvsa/Letmeask-(Copy)?node-id=0%3A1)
